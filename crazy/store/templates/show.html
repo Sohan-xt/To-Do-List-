@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Databse Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 2px solid aqua;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        td a {
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .delete {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .delete:hover {
+            background-color: #c82333;
+        }
+
+        .edit {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .edit:hover {
+            background-color: #e0a800;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <H2> Tasks </H2>
+    <table style="border: 5px,aqua solid;">
+        <tr><td>Task</td>
+        <td>Time</td>
+        <td>Date</td>
+    
+</tr>
+{% for i in data %}
+<tr>
+    <td>{{i.Task}}</td>
+    <td>{{i.Date}}</td>
+    <td>{{i.Time}}</td>
+    <td><a href="del/{{i.id}}">Delete data</a></td>
+     <td><a href="edit/{{ i.id }}">Edit Task</a> </td>
+</tr>
+{% endfor %}
+
+    </table>
+    <footer><a href = "tododata">Add Tasks</a></footer><br>
+</body>
+</html>

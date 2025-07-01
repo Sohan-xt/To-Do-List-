@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e6eef5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background: rgb(206, 227, 246);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"] {
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+
+    </style>
+</head>
+<body>
+    <centre><h2><b>EDIT TASKS</b></h2></centre>
+    <div>
+        <form action="../editcode/{{x.id}}" method="get">
+            <label for="Task">Task</label><br>
+            <input type="text" name="Task" placeholder="Enter the Task" value="{{ id.Task }}"><br>
+            
+           <label for="Date">Date</label><br>
+           <input type="date" name="Date" placeholder="Date" value="{{ id.Date }}"><br>
+
+           <label for="Time">Time</label><br>
+           <input type="time" name="Time" placeholder="Time" value="{{ id.Time }}">
+           <button>Save</button>
+        </form>
+    </div>
+</body>
+</html>
